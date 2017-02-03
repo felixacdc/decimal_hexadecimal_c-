@@ -1,2 +1,2 @@
-# decimal_hexadecimal_c-
+# decimal a hexadecimal c#
 Numeros Deciamales a Hexadecimales
