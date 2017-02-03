@@ -14,19 +14,19 @@ namespace Rextester
     {
         public static void Main(string[] args)
         {
-            int number = 0;
-            String hexadecimal = "";
+            int number = 0; // Variable de tipo entero
+            String hexadecimal = ""; // Variable de tipo string (cadena de caracteres)
             
-            Console.Write("Escriba un numero decimal: ");
-            number = int.Parse(Console.ReadLine());
+            Console.Write("Escriba un numero decimal: "); //Imprime en pantalla un mensaje
+            number = int.Parse(Console.ReadLine()); // Lee un dato digitado por el usuario y lo convierte a entero
             
-            while(true) {
-              if((number % 16) != 0) {
-                if((number % 16) > 9) {
-                  switch(number % 16) {
-                    case 10:
-                      hexadecimal = "A" + hexadecimal;
-                      break;
+            while(true) { // Ciclo while infinito
+              if((number % 16) != 0) { // Condicion que evalua si el residuo es diferente de 0
+                if((number % 16) > 9) { // Si es diferente de 0 y mayor que 9, entonces hara
+                  switch(number % 16) { // una estructura multicondicional
+                    case 10: // Si el residuo es 10, sera A
+                      hexadecimal = "A" + hexadecimal; // Guardara el valor en la variable string
+                      break; // Sale del switch
                     case 11:
                       hexadecimal = "B" + hexadecimal;
                       break;
@@ -43,20 +43,19 @@ namespace Rextester
                       hexadecimal = "F" + hexadecimal;
                       break;
                   }
-                } else 
+                } else // si no es mayor que 9, entonces tomara el valor normal
                   hexadecimal = (number % 16).ToString() + hexadecimal;
                 
-              } else 
+              } else // si no es diferente de 0 entonces sera 0
                 hexadecimal = "0" + hexadecimal;
               
-              number /= 16;
-              if(number <= 0)
+              number /= 16; // Dividimos el numero dentro de 16 y lo igualamos
+              if(number <= 0) // condicion para salir del while infinito
                 break;
             }
             
-            Console.WriteLine("El numero hexadecimal es: " + hexadecimal);
-            Console.ReadKey();
+            Console.WriteLine("El numero hexadecimal es: " + hexadecimal); // Imprime en pantalla el resultado en hexadecimal
+            Console.ReadKey();  // Hace una pausa
         }
     }
 }
-      
